@@ -1,6 +1,7 @@
 # Vestroll Landing Waitlist Page
 
-Welcome to the Vestroll project! This is a Next.js landing page built with TypeScript and Tailwind CSS, designed for capturing waitlist signups.
+This is a Next.js landing page built with TypeScript and Tailwind CSS, designed for capturing waitlist signups.
+VestRoll is a Payroll management platform built for modern businesses. Built with **Next.js 15**, **TypeScript**, and **React 19**, it provides a smooth experience for managing contracts, team members, and financial operations. By leveraging the **Stellar configuration**, VestRoll ensures fast, low-cost, and secure stablecoin interactions, making global payroll efficient and accessible.
 
 ## Architecture and Folder Structure
 
@@ -16,6 +17,21 @@ The project follows a modular and scalable architecture to ensure clean code and
 - **`src/types`**: Centralized location for TypeScript interfaces, types, and enums.
 - **`src/styles`**: Contains global CSS, Tailwind extensions, and font configurations.
 - **`src/app`**: Uses the Next.js App Router for routing and page-level layouts.
+
+## 🎯 Target Audience & Ecosystem Impact
+
+### Who is this for?
+
+- **Global Enterprises**: Companies with distributed teams needing seamless cross-border payroll.
+- **DAO & Web3 Organizations**: Native crypto organizations requiring fiat and stablecoin payroll solutions.
+- **Freelancers & Contractors**: Individuals seeking transparent, instant, and low-fee payments.
+
+### Contribution to the Stellar Ecosystem
+
+VestRoll plays a pivotal role in the **Stellar ecosystem** by:
+
+1.  **Driving Real-World Utility**: Moving beyond speculation to practical, high-volume stablecoin use cases (Payroll).
+2.  **Highlighting Efficiency**: Showcasing Stellar's speed and low fees for frequent, small-to-large value transactions.
 
 ## Getting Started
 
