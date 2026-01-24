@@ -73,7 +73,7 @@ export const Features = () => {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="bg-[#FCF9FF] rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 min-h-[500px] flex flex-col overflow-hidden"
+              className="bg-[#FCF9FF] rounded-3xl transition-all duration-300 min-h-[500px] flex flex-col overflow-hidden"
             >
               {/* Text Content - Always Padded */}
               <div className="p-6 md:p-8 md:pb-4">
