@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  weight: ["300", "400", "500", "600", "700", "800"],
+const bkFirma = localFont({
+  src: [
+    {
+      path: "../fonts/BR Firma Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/BR Firma Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
   title: "Vestroll | Modern Payroll & Workforce Management",
-  description: "Secure, seamless crypto and fiat payroll for modern teams. Manage contracts, track time, and automate payments with Vestroll.",
+  description:
+    "Secure, seamless crypto and fiat payroll for modern teams. Manage contracts, track time, and automate payments with Vestroll.",
 };
 
 export default function RootLayout({
@@ -20,9 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${outfit.variable} font-sans antialiased`}
-      >
+      <body className={`${bkFirma.className} font-sans antialiased`}>
         {children}
       </body>
     </html>
