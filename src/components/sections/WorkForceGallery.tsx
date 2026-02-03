@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Button } from "../common/button";
 import { ArrowRight } from "lucide-react";
@@ -6,6 +7,7 @@ import freelancers from "@/assets/images/Freelancers.jpg";
 import remoteTeams from "@/assets/images/Remote teams.png";
 import employers from "@/assets/images/Employers.png";
 import startups from "@/assets/images/Startups.jpg";
+import { motion } from "framer-motion";
 function WorkForceGallery() {
   return (
     <section>
@@ -33,7 +35,21 @@ function WorkForceGallery() {
         </div>
       </div>
       <div className="mt-8 flex  flex-col lg:flex-row gap-5 lg:gap-8">
-        <div className="relative rounded-2xl  overflow-hidden  h-60.75 lg:h-143.75  flex-1">
+        <motion.div
+          initial={{
+            y: 20,
+            opacity: 0,
+            scale: 0.8,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{ ease: "easeInOut", delay: 0.3, duration: 0.3 }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="relative rounded-2xl  overflow-hidden  h-60.75 lg:h-143.75  flex-1"
+        >
           <p className="py-1 px-6 bg-[#FFFFFF4D] text-white backdrop-blur-sm rounded-full absolute left-4.5 bottom-4 md:top-4 md:bottom-auto md:right-4 md:left-auto z-20 text-xs font-bold">
             freelancers
           </p>
@@ -49,9 +65,19 @@ function WorkForceGallery() {
               className="h-full w-full object-cover "
             />
           </div>
-        </div>
+        </motion.div>
         <div className="flex gap-5 md:gap-8 flex-row lg:flex-col flex-1  justify-between">
-          <div className="relative rounded-2xl  overflow-hidden  h-67.75  flex-1 lg:flex-none">
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              ease: "easeInOut",
+              duration: 0.4,
+              delay: 0.6,
+            }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="relative rounded-2xl  overflow-hidden  h-67.75  flex-1 lg:flex-none"
+          >
             <p className="py-1 px-6 bg-[#FFFFFF4D] text-white backdrop-blur-sm rounded-full absolute left-1/2 -translate-x-1/2 md:translate-0 md:left-auto md:right-4 top-4 z-20 text-xs font-bold">
               Remote Teams
             </p>
@@ -67,8 +93,18 @@ function WorkForceGallery() {
                 className="h-full w-full object-cover object-[30%_40%] md:object-[50%_40%]"
               />
             </div>
-          </div>
-          <div className="relative rounded-2xl  overflow-hidden  h-67.75  md:flex-1 lg:flex-none ">
+          </motion.div>
+          <motion.div
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              ease: "easeInOut",
+              duration: 0.4,
+              delay: 0.4,
+            }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="relative rounded-2xl  overflow-hidden  h-67.75  md:flex-1 lg:flex-none "
+          >
             <p className="py-1 px-6 bg-[#FFFFFF4D] text-white backdrop-blur-sm rounded-full absolute left-1/2 -translate-x-1/2 md:translate-0 md:left-auto md:right-4 top-4 z-20 text-xs font-bold">
               Startups
             </p>
@@ -84,10 +120,24 @@ function WorkForceGallery() {
                 className="h-full w-full object-cover object-[30%_40%]"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="relative rounded-2xl  overflow-hidden h-60.75 md:h-80 lg:h-143.75  lg:flex-1 ">
+        <motion.div
+          initial={{ y: 20, opacity: 0, scale: 0.8 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            ease: "easeInOut",
+            duration: 0.4,
+            delay: 0.6,
+          }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="relative rounded-2xl  overflow-hidden h-60.75 md:h-80 lg:h-143.75  lg:flex-1 "
+        >
           <p className="py-1 px-6 bg-[#FFFFFF4D] text-white backdrop-blur-sm rounded-full absolute left-4.5 bottom-4 md:top-4 md:bottom-auto md:right-4 md:left-auto z-20 text-xs font-bold">
             Employers
           </p>
@@ -103,7 +153,7 @@ function WorkForceGallery() {
               className="h-full w-full object-cover object-[30%_40%] md:object-[100%]"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

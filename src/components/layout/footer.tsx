@@ -1,86 +1,136 @@
 import React from "react";
 import Link from "next/link";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import Image from "next/image";
 import logotext from "@/assets/VestRoll.jpg";
 
 export const Footer = () => {
-    const socialLinks = [
-        {
-            name: "Google",
-            href: "#",
-            icon: (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
-                </svg>
-            ),
-        },
-        {
-            name: "Facebook",
-            href: "#",
-            icon: (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-            ),
-        },
-        {
-            name: "Twitter",
-            href: "#",
-            icon: (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                </svg>
-            ),
-        },
-        {
-            name: "LinkedIn",
-            href: "#",
-            icon: (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-            ),
-        },
-    ];
+  const socialLinks = [
+    {
+      name: "Google",
+      href: "#",
+      icon: (
+        <svg
+          width={24}
+          height={24}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M23.5655 9.56813H22.607V9.51875H11.8984V14.2781H18.6228C17.6418 17.0487 15.0057 19.0375 11.8984 19.0375C7.95589 19.0375 4.75938 15.841 4.75938 11.8984C4.75938 7.95589 7.95589 4.75938 11.8984 4.75938C13.7183 4.75938 15.374 5.44591 16.6346 6.56734L20.0001 3.20187C17.875 1.22137 15.0325 0 11.8984 0C5.32753 0 0 5.32753 0 11.8984C0 18.4694 5.32753 23.7969 11.8984 23.7969C18.4694 23.7969 23.7969 18.4694 23.7969 11.8984C23.7969 11.1006 23.7148 10.3219 23.5655 9.56813Z"
+            fill="#5E2A8C"
+          />
+          <path
+            d="M1.375 6.36031L5.28423 9.22724C6.342 6.60839 8.90374 4.75938 11.9015 4.75938C13.7214 4.75938 15.3771 5.44591 16.6377 6.56734L20.0032 3.20187C17.8781 1.22137 15.0356 0 11.9015 0C7.33136 0 3.36799 2.58018 1.375 6.36031Z"
+            fill="#5E2A8C"
+          />
+          <path
+            d="M11.8973 23.7972C14.9706 23.7972 17.7632 22.621 19.8746 20.7083L16.192 17.5921C14.9573 18.5312 13.4485 19.039 11.8973 19.0378C8.80249 19.0378 6.17472 17.0644 5.18477 14.3105L1.30469 17.3C3.27388 21.1533 7.27294 23.7972 11.8973 23.7972Z"
+            fill="#5E2A8C"
+          />
+          <path
+            d="M23.5655 9.56891H22.607V9.51953H11.8984V14.2789H18.6228C18.1536 15.5975 17.3083 16.7497 16.1914 17.5932L16.1932 17.592L19.8757 20.7082C19.6152 20.945 23.7969 17.8484 23.7969 11.8992C23.7969 11.1014 23.7148 10.3227 23.5655 9.56891Z"
+            fill="#5E2A8C"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "Facebook",
+      href: "#",
+      icon: (
+        <svg
+          width={26}
+          height={26}
+          viewBox="0 0 26 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M0 13.0726C0 19.5358 4.69408 24.9102 10.8333 26V16.6108H7.58333V13H10.8333V10.1108C10.8333 6.86075 12.9274 5.05592 15.8893 5.05592C16.8274 5.05592 17.8393 5.2 18.7774 5.34408V8.66667H17.1167C15.5274 8.66667 15.1667 9.46075 15.1667 10.4726V13H18.6333L18.0559 16.6108H15.1667V26C21.3059 24.9102 26 19.5368 26 13.0726C26 5.8825 20.15 0 13 0C5.85 0 0 5.8825 0 13.0726Z"
+            fill="#5E2A8C"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "Twitter",
+      href: "#",
+      icon: (
+        <svg
+          width={25}
+          height={21}
+          viewBox="0 0 25 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24.0625 2.38179C23.1771 2.78575 22.2257 3.05876 21.2271 3.18158C22.2464 2.55296 23.0291 1.55752 23.3977 0.371465C22.4286 0.963126 21.3684 1.37999 20.2629 1.60404C19.3623 0.616916 18.0794 0 16.6594 0C13.933 0 11.7226 2.27424 11.7226 5.07924C11.7226 5.47739 11.7663 5.86501 11.8504 6.23686C7.74756 6.02497 4.10999 4.00285 1.67507 0.929775C1.25022 1.67996 1.00677 2.55258 1.00677 3.48332C1.00677 5.24558 1.87838 6.8002 3.20294 7.71112C2.41899 7.68585 1.65227 7.468 0.966824 7.07573C0.966542 7.097 0.966542 7.11828 0.966542 7.13965C0.966542 9.60065 2.66821 11.6536 4.92651 12.1202C4.19955 12.3237 3.43702 12.3534 2.69716 12.2073C3.32532 14.2252 5.14853 15.6937 7.3087 15.7348C5.61916 17.0971 3.49047 17.9091 1.17765 17.9091C0.779117 17.9091 0.386222 17.8851 0 17.8382C2.18471 19.2793 4.7796 20.1202 7.56747 20.1202C16.648 20.1202 21.6134 12.3804 21.6134 5.6683C21.6134 5.44799 21.6087 5.22894 21.5991 5.01115C22.5656 4.29229 23.3998 3.4019 24.0625 2.38179Z"
+            fill="#5E2A8C"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "LinkedIn",
+      href: "#",
+      icon: (
+        <svg
+          width={24}
+          height={24}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.6823 19.6826H16.2596V14.3224C16.2596 13.0442 16.2368 11.3988 14.4795 11.3988C12.6968 11.3988 12.424 12.7915 12.424 14.2294V19.6822H9.00142V8.65958H12.2871V10.166H12.3331C12.662 9.6037 13.1371 9.14117 13.708 8.82761C14.2789 8.51405 14.9242 8.36121 15.5751 8.38536C19.0441 8.38536 19.6837 10.6672 19.6837 13.6357L19.6823 19.6826ZM5.13939 7.15294C4.04241 7.15312 3.15297 6.26395 3.15279 5.16697C3.15261 4.06999 4.04169 3.18055 5.13867 3.18037C6.23565 3.1801 7.12509 4.06927 7.12527 5.16625C7.12536 5.69304 6.91619 6.19829 6.54377 6.57087C6.17135 6.94344 5.66618 7.15282 5.13939 7.15294ZM6.85077 19.6827H3.42448V8.65958H6.85068V19.6826L6.85077 19.6827ZM21.3886 0.00168124H1.70462C0.774301 -0.00878595 0.0113695 0.73646 0 1.66678V21.4329C0.0110086 22.3637 0.77385 23.1096 1.70453 23.0999H21.3886C22.3213 23.1114 23.0871 22.3655 23.1 21.4329V1.66524C23.0867 0.733121 22.3208 -0.0120344 21.3886 0.000147253"
+            fill="#5E2A8C"
+          />
+        </svg>
+      ),
+    },
+  ];
 
-    return (
-        <footer className="py-12 md:py-16 px-4 bg-purple-50/50 border-t border-gray-200">
-            <div className="container mx-auto max-w-7xl">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-                    {/* Brand and Description */}
-                    <div className="max-w-md">
-                        <div className="flex items-center gap-2 mb-4">
-                           <Image src={logo} alt="VestRoll" width={40} height={40} />
-                           <Image src={logotext} alt="VestRoll" width={80} height={80} />
-                        </div>
-                        <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                            VestRoll is a modern payroll platform that lets you pay teams in crypto or fiat, track time, manage contracts, and automate payroll all in one secure, cross-platform system.
-                        </p>
-                    </div>
-
-                    {/* Social Links */}
-                    <div className="flex items-center gap-4">
-                        {socialLinks.map((social) => (
-                            <Link
-                                key={social.name}
-                                href={social.href}
-                                className="w-12 h-12 bg-purple-100 hover:bg-purple-200 rounded-full flex items-center justify-center text-purple-700 transition-colors duration-200"
-                                aria-label={social.name}
-                            >
-                                {social.icon}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Copyright */}
-                <div className="mt-12 pt-8 border-t border-gray-200">
-                    <p className="text-center text-sm text-gray-600">
-                        © {new Date().getFullYear()} VestRoll. All rights reserved.
-                    </p>
-                </div>
+  return (
+    <footer className="py-12 md:py-16 px-4 bg-white ">
+      <div className="w-full mx-auto max-w-310 border-t border-gray-300 pt-6">
+        <div className="flex flex-col md:flex-row justify-between items-start  gap-8">
+          {/* Brand and Description */}
+          <div className="max-w-md">
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src={logo}
+                alt="VestRoll"
+                width={logo.width}
+                height={logo.height}
+                className="h-8 w-auto"
+              />
             </div>
-        </footer>
-    );
+            <p className="text-sm md:text-base text-gray-700 leading-[140%] tracking-[0%]">
+              VestRoll is a modern payroll platform that lets you pay teams in
+              crypto or fiat, track time, manage contracts, and automate payroll
+              all in one secure, cross-platform system.
+            </p>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            {socialLinks.map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+                className="w-12 h-12 bg-purple-100  hover:scale-109   rounded-full flex items-center justify-center  transition-all ease-in-out duration-300 "
+                aria-label={social.name}
+              >
+                {social.icon}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };

@@ -1,11 +1,18 @@
+"use client";
 import { CircleCheckIcon, CrowIcon } from "@/assets/svg";
 import { Button } from "../common/button";
-
+import { motion } from "framer-motion";
 function Pricing() {
   return (
     <section className="mt-25 lg:mt-50 ">
       <div className="max-w-310 mx-auto px-5 flex flex-col gap-6 lg:flex-row lg:gap-3">
-        <div className="border-[0.5px] border-[#E5E7EB] rounded-3xl py-6 px-4 bg-linear-to-b from-[#FFFFFF] to-[#F3E5FF] space-y-6 ">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="border-[0.5px] border-[#E5E7EB] rounded-3xl py-6 px-4 bg-linear-to-b from-[#FFFFFF] to-[#F3E5FF] space-y-6 "
+        >
           <div className="pb-4 border-b border-[rgb(200,143,251)] space-y-5">
             <div className="flex flex-col">
               <p className="text-[#374151] leading-[150%]">Starter Plan</p>
@@ -29,7 +36,9 @@ function Pricing() {
             </div>
           </div>
           <div className="space-y-4">
-            <p className="font-semibold leading-[130%]">What's Included:</p>
+            <p className="font-semibold leading-[130%]">
+              What&apos;s Included:
+            </p>
             <div className="space-y-4 md:space-y-8">
               <div className="flex gap-4 items-start">
                 <CircleCheckIcon className="text-[#5E2A8C]" />
@@ -63,8 +72,14 @@ function Pricing() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="relative mt-10 lg:mt-0 ">
+        </motion.div>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="relative mt-10  lg:mt-0 "
+        >
           <div className="flex bottom-full z-20 items-center gap-2.5 bg-[#643490] rounded-t-[10px] left-1/2 -translate-x-1/2 h-9 px-9 w-fit  absolute">
             <CrowIcon />
             <p className="text-white">Popular</p>
@@ -94,7 +109,7 @@ function Pricing() {
             </div>
             <div className="space-y-4">
               <p className="font-semibold leading-[130%] text-[#E5E7EB]">
-                What's Included:
+                What&apos;s Included:
               </p>
               <div className="space-y-4 md:space-y-8 text-[#E5E7EB]">
                 <div className="flex gap-4 items-start">
@@ -130,8 +145,14 @@ function Pricing() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="border-[0.5px] border-[#E5E7EB] rounded-3xl py-6 px-4 bg-linear-to-b from-[#FFFFFF] to-[#F3E5FF] space-y-6">
+        </motion.div>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.5, delay: 0.6 }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="border-[0.5px] border-[#E5E7EB] rounded-3xl py-6 px-4 bg-linear-to-b from-[#FFFFFF] to-[#F3E5FF] space-y-6"
+        >
           <div className="pb-4 border-b border-[rgb(200,143,251)] space-y-5">
             <div className="flex flex-col">
               <p className="text-[#374151] leading-[150%]">Starter Plan</p>
@@ -155,7 +176,9 @@ function Pricing() {
             </div>
           </div>
           <div className="space-y-4">
-            <p className="font-semibold leading-[130%]">What's Included:</p>
+            <p className="font-semibold leading-[130%]">
+              What&apos;s Included:
+            </p>
             <div className="space-y-4 md:space-y-8">
               <div className="flex gap-4 items-start">
                 <CircleCheckIcon className="text-[#5E2A8C]" />
@@ -189,7 +212,7 @@ function Pricing() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

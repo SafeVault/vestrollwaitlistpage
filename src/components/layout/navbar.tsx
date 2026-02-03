@@ -3,34 +3,36 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../assets/logo.jpg";
-import LogoText from "../../assets/VestRoll.jpg";
+import Logo from "../../assets/logo.png";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-md border-b shadow-[0px_4px_8px_0px_#0000000A]">
-      <div className="container mx-auto py-6 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-bold text-2xl tracking-tight flex items-center gap-2"
-        >
-          <Image src={Logo} alt="Vestroll Logo" width={32} height={32} />
-          <Image src={LogoText} alt="Vestroll Logo" width={80} height={80} />
+    <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-md border-b border-[#E5EFFF] shadow-[0px_4px_8px_0px_#0000000A]">
+      <div className="max-w-312 mx-auto py-3 md:py-6 flex items-center justify-between px-6">
+        <Link href="/" className="">
+          <Image
+            src={Logo.src}
+            alt="Vestroll Logo"
+            width={Logo.width}
+            blurDataURL={Logo.blurDataURL}
+            height={Logo.width}
+            className="h-5 w-auto md:h-8"
+          />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 mx-auto">
           <Link
             href="#features"
-            className="text-md font-medium text-black/70 hover:text-black/100 transition-colors"
+            className="text-base leading-5.5 font-medium text-[#374151] hover:text-[#374151]/90 duration-300 ease-in-out transition-colors"
           >
             Home
           </Link>
           <Link
             href="#pricing"
-            className="text-md font-medium text-black/70 hover:text-black/100 transition-colors"
+            className="text-base leading-5.5 font-medium text-[#374151] hover:text-[#374151]/90 duration-300 ease-in-out transition-colors"
           >
             FAQs
           </Link>
