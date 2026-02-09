@@ -31,10 +31,10 @@ export const Hero = () => {
         </motion.p>
         <motion.button
           initial={{
-            x: -30,
+            y: 30,
             opacity: 0,
           }}
-          animate={{ x: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           className="bg-[#5E2A8C] text-white px-4 py-2 rounded-xl w-fit md:mx-auto flex items-center gap-2"
         >

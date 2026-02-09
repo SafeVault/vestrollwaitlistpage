@@ -80,12 +80,12 @@ export const HowItWorks = () => {
                 }}
                 viewport={{ once: true, amount: 0.4 }}
                 key={step.number}
-                className="flex  items-start relative gap-2"
+                className="flex  items-start relative gap-2 md:flex-col flex-row"
               >
                 {/* Number Circle with dotted line */}
-                <div className="w-fit ">
+                <div className=" flex w-fit md:w-full items-center ">
                   {/* Circular Badge */}
-                  <div className="w-8 h-8 rounded-full bg-white border-2 border-[#F3E6FF] flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-white border-2 border-[#F3E6FF] flex items-center justify-center shrink-0">
                     <span className="text-sm font-bold text-purple-600">
                       {step.number}
                     </span>
@@ -93,7 +93,7 @@ export const HowItWorks = () => {
 
                   {/* Dotted Line - only show if not last item */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:block flex-1 h-0 border-t-2 border-dotted border-gray-300 ml-2"></div>
+                    <div className="hidden xl:block flex-1 h-0 border-t-2 border-dotted border-[#CC93F9] ml-5  w-full"></div>
                   )}
                 </div>
 
