@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
@@ -37,16 +37,44 @@ export const HowItWorks = () => {
     },
   ];
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const stepVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section className="py-12 md:py-16 px-4">
-      <div className="container mx-auto bg-linear-to-b from-[#FFFFFF] to-[#F3E5FF] px-4 py-6 w-full rounded-2xl border-2 border-[#EDD9FF] md:px-8 md:py-10 lg:py-15.5">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+        className="container mx-auto bg-linear-to-b from-[#FFFFFF] to-[#F3E5FF] px-4 py-6 w-full rounded-2xl border-2 border-[#EDD9FF] md:px-8 md:py-10 lg:py-15.5 hover:shadow-xl transition-shadow duration-500"
+      >
         {/* Header */}
         <div className="space-y-3">
           <motion.div
             initial={{ scale: 0.7, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true }}
           >
             <Image
               src={Logo}
@@ -56,37 +84,48 @@ export const HowItWorks = () => {
               className="h-5 md:h-8 w-auto"
             />
           </motion.div>
-          <h2 className="text-2xl md:text-4xl lg:text-[2.5rem] font-medium  text-[#1F2937] leading-[120%] tracking-[0px] ">
+          <motion.h2
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-4xl lg:text-[2.5rem] font-medium  text-[#1F2937] leading-[120%] tracking-[0px] "
+          >
             How it works
-          </h2>
-          <p className="text-base text-[#6B7280] leading-[130%]">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-base text-[#6B7280] leading-[130%]"
+          >
             A fast, intuitive workflow that helps you set up your team, track
             work, and manage payments effortlessly.
-          </p>
+          </motion.p>
         </div>
 
         {/* Steps Container with Purple Background */}
         <div className="rounded-3xl mt-8">
           {/* Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6 mb-8 ">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6 mb-8 "
+          >
             {steps.map((step, index) => (
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{
-                  ease: "easeInOut",
-                  duration: 0.3,
-                  delay: 0.2 * index,
-                }}
-                viewport={{ once: true, amount: 0.4 }}
+                variants={stepVariants}
                 key={step.number}
-                className="flex  items-start relative gap-2 md:flex-col flex-row"
+                className="flex items-start relative gap-2 md:flex-col flex-row group"
               >
                 {/* Number Circle with dotted line */}
                 <div className=" flex w-fit md:w-full items-center ">
                   {/* Circular Badge */}
-                  <div className="w-8 h-8 rounded-full bg-white border-2 border-[#F3E6FF] flex items-center justify-center shrink-0">
-                    <span className="text-sm font-bold text-purple-600">
+                  <div className="w-8 h-8 rounded-full bg-white border-2 border-[#F3E6FF] flex items-center justify-center shrink-0 group-hover:bg-[#5E2A8C] group-hover:text-white transition-colors duration-300">
+                    <span className="text-sm font-bold text-purple-600 group-hover:text-white">
                       {step.number}
                     </span>
                   </div>
@@ -97,7 +136,7 @@ export const HowItWorks = () => {
                   )}
                 </div>
 
-                <div>
+                <div className="group-hover:translate-x-1 md:group-hover:translate-x-0 md:group-hover:translate-y-1 transition-transform duration-300">
                   {/* Title */}
                   <h3 className="text-lg font-semibold text-black mb-1.5  leading-snug">
                     {step.title}
@@ -110,22 +149,23 @@ export const HowItWorks = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* CTA Button */}
           <div className="flex justify-start md:justify-end">
             <motion.button
-              initial={{ x: 20, opacity: 0, scale: 0.9 }}
-              whileInView={{ x: 0, opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                ease: "anticipate",
-                duration: 0.3,
-                delay: 0.4,
+                duration: 0.5,
+                delay: 0.8,
               }}
-              viewport={{ once: true, amount: 0.4 }}
-              className="bg-[#5E2A8C] hover:bg-purple-800 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200 font-medium"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              viewport={{ once: true }}
+              className="bg-[#5E2A8C] hover:bg-purple-800 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200 font-medium shadow-md hover:shadow-lg"
             >
-              Create Account
+              Get started
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -142,7 +182,7 @@ export const HowItWorks = () => {
             </motion.button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

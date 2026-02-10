@@ -2,13 +2,13 @@
 import Image from "next/image";
 import image from "@/assets/images/guy-sitting.jpg";
 import Faq from "../common/Faq";
-import WorkForceGallery from "./WorkForceGallery";
+import { Workforce } from "./workforce";
 import { motion } from "framer-motion";
 function FrequentlyAsked() {
   return (
     <section className="mt-10">
       <div className="max-w-310 mx-auto px-5  flex-col-reverse gap-25 flex lg:flex-col">
-        <WorkForceGallery />
+        <Workforce />
         <div className="space-y-5.75">
           <div className="space-y-4 md:space-y-11">
             <motion.div

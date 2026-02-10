@@ -7,7 +7,6 @@ import { Waitlist } from "@/components/sections/waitlist";
 import { ThreeWays } from "@/components/sections/three-ways";
 import { Footer } from "@/components/layout/footer";
 import FrequentlyAsked from "@/components/sections/frequentlyAsked";
-import Pricing from "@/components/sections/pricing";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <FrequentlyAsked />
-      <Pricing />
       <Waitlist />
       <ThirtyDays />
       <ThreeWays />

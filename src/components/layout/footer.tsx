@@ -95,8 +95,8 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 md:py-16 px-4 bg-white ">
-      <div className="w-full mx-auto max-w-310 border-t border-gray-300 pt-6">
+    <footer className="py-12 md:py-16 px-4 bg-[#0d0d0d] text-white">
+      <div className="w-full mx-auto max-w-310 border-t border-gray-800 pt-6">
         <div className="flex flex-col md:flex-row justify-between items-start  gap-8">
           {/* Brand and Description */}
           <div className="max-w-md">
@@ -106,10 +106,10 @@ export const Footer = () => {
                 alt="VestRoll"
                 width={logo.width}
                 height={logo.height}
-                className="h-8 w-auto"
+                className="h-8 w-auto invert brightness-0"
               />
             </div>
-            <p className="text-sm md:text-base text-gray-700 leading-[140%] tracking-[0%]">
+            <p className="text-sm md:text-base text-gray-400 leading-[140%] tracking-[0%]">
               VestRoll is a modern payroll platform that lets you pay teams in
               crypto or fiat, track time, manage contracts, and automate payroll
               all in one secure, cross-platform system.
@@ -122,7 +122,7 @@ export const Footer = () => {
               <Link
                 key={social.name}
                 href={social.href}
-                className="w-12 h-12 bg-purple-100  hover:scale-109   rounded-full flex items-center justify-center  transition-all ease-in-out duration-300 "
+                className="w-12 h-12 bg-white/10 hover:bg-white/20 hover:scale-105 rounded-full flex items-center justify-center transition-all ease-in-out duration-300 [&_svg_path]:fill-white"
                 aria-label={social.name}
               >
                 {social.icon}

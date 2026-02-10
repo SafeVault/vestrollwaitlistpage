@@ -10,12 +10,21 @@ import { CircleCheckIcon } from "@/assets/svg";
 import { motion, Variants } from "framer-motion";
 
 export const Features = () => {
-  // Animation variants for the cards
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   const cardVariants: Variants = {
     hidden: {
       opacity: 0,
-      y: 100,
-      scale: 0.8,
+      y: 50,
+      scale: 0.95,
     },
     visible: {
       opacity: 1,
@@ -34,38 +43,19 @@ export const Features = () => {
         {/* Header Section */}
         <div className="text-left md:text-center max-w-230 mx-auto space-y-1">
           <motion.h2
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "anticipate",
-            }}
-            viewport={{ once: true, amount: 0.6 }}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
             className="text-2xl md:text-4xl lg:text-[2.875rem] leading-[120%] text-black font-medium"
           >
             A Complete Suite for Payroll and Workforce Management
           </motion.h2>
           <motion.p
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay: 0.2,
-            }}
-            viewport={{ once: true, amount: 0.6 }}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
             className="text-sm md:text-base leading-[130%] tracking-[0px] text-black"
           >
             From crypto/fiat payments to timesheets and contracts, every feature
@@ -74,14 +64,17 @@ export const Features = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mx-auto">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mx-auto"
+        >
           {/* Card 1: Multiple Payment Types */}
           <motion.div
-            className="bg-[#FCF9FF] pt-6 px-6 lg:px-7 lg:pt-7 space-y-4 flex flex-col justify-between"
+            className="bg-[#FCF9FF] pt-6 px-6 lg:px-7 lg:pt-7 space-y-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 rounded-2xl overflow-hidden group"
             variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
           >
             <div className="max-w-84 space-y-1.5">
               <h6 className="text-base md:text-2xl font-semibold">
@@ -113,14 +106,14 @@ export const Features = () => {
                     <p>Milestone Payments</p>
                   </li>
                 </ul>
-                <div className="max-w-75 h-full">
+                <div className="max-w-75 h-full overflow-hidden">
                   <Image
                     src={Feature1.src}
                     width={Feature1.width}
                     height={Feature1.height}
                     blurDataURL={Feature1.blurDataURL}
                     alt="Multiple Payment Types"
-                    className="w-fit h-auto"
+                    className="w-fit h-auto group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -129,11 +122,8 @@ export const Features = () => {
 
           {/* Card 2: Time sheet Management */}
           <motion.div
-            className="bg-[#FCF9FF] pt-6 px-6 lg:px-7 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-4 lg:grid-cols-1 content-between lg:pt-7"
+            className="bg-[#FCF9FF] pt-6 px-6 lg:px-7 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-4 lg:grid-cols-1 content-between lg:pt-7 hover:shadow-lg transition-shadow duration-300 rounded-2xl overflow-hidden group"
             variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
           >
             <div className="max-w-98 space-y-1.5">
               <h6 className="text-base md:text-2xl font-semibold">
@@ -146,14 +136,14 @@ export const Features = () => {
             </div>
             <div>
               <div className="flex justify-end flex-col gap-6 xl:flex-row">
-                <div className="max-w-75">
+                <div className="max-w-75 overflow-hidden">
                   <Image
                     src={Feature2.src}
                     width={Feature2.width}
                     height={Feature2.height}
                     blurDataURL={Feature2.blurDataURL}
                     alt="Time sheet Management"
-                    className="w-fit h-auto"
+                    className="w-fit h-auto group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -162,11 +152,8 @@ export const Features = () => {
 
           {/* Card 3: Smart Payroll Management */}
           <motion.div
-            className="bg-[#FCF9FF] min-h-70 pt-6 px-6 lg:pl-7 lg:pr-15 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-14.5 lg:grid-cols-1 content-between lg:pt-7"
+            className="bg-[#FCF9FF] min-h-70 pt-6 px-6 lg:pl-7 lg:pr-15 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-14.5 lg:grid-cols-1 content-between lg:pt-7 hover:shadow-lg transition-shadow duration-300 rounded-2xl overflow-hidden group"
             variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
           >
             <div className="max-w-98 space-y-1.5">
               <h6 className="text-base md:text-2xl font-semibold">
@@ -179,14 +166,14 @@ export const Features = () => {
             </div>
             <div>
               <div className="flex justify-end flex-col gap-6 xl:flex-row">
-                <div className="max-w-105">
+                <div className="max-w-105 overflow-hidden">
                   <Image
                     src={Feature3.src}
                     width={Feature3.width}
                     height={Feature3.height}
                     blurDataURL={Feature3.blurDataURL}
                     alt="Smart Payroll Management"
-                    className="w-fit h-auto"
+                    className="w-fit h-auto group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -195,11 +182,8 @@ export const Features = () => {
 
           {/* Card 4: Employee Portal */}
           <motion.div
-            className="bg-[#FCF9FF] pt-6 px-6 lg:px-7 pb-6 lg:pb-7 lg:pt-7 space-y-4 flex flex-col md:flex-row lg:flex-col xl:flex-row justify-between"
+            className="bg-[#FCF9FF] pt-6 px-6 lg:px-7 pb-6 lg:pb-7 lg:pt-7 space-y-4 flex flex-col md:flex-row lg:flex-col xl:flex-row justify-between hover:shadow-lg transition-shadow duration-300 rounded-2xl overflow-hidden group"
             variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
           >
             <div className="space-y-4">
               <div className="max-w-84 space-y-1.5">
@@ -239,14 +223,14 @@ export const Features = () => {
             </div>
             <div>
               <div className="flex justify-between flex-col gap-6 md:flex-row lg:flex-col xl:flex-row">
-                <div className="max-w-75 h-full">
+                <div className="max-w-75 h-full overflow-hidden">
                   <Image
                     src={Feature4.src}
                     width={Feature4.width}
                     height={Feature4.height}
                     blurDataURL={Feature4.blurDataURL}
                     alt="Multiple Payment Types"
-                    className="w-fit h-auto"
+                    className="w-fit h-auto group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -255,11 +239,8 @@ export const Features = () => {
 
           {/* Card 5: Create & Manage Contracts */}
           <motion.div
-            className="bg-[#FCF9FF] min-h-70 pt-6 px-6 lg:pl-7 lg:pr-15 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-6 lg:grid-cols-1 content-between lg:pt-7"
+            className="bg-[#FCF9FF] min-h-70 pt-6 px-6 lg:pl-7 lg:pr-15 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-6 lg:grid-cols-1 content-between lg:pt-7 hover:shadow-lg transition-shadow duration-300 rounded-2xl overflow-hidden group"
             variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
           >
             <div className="max-w-84 space-y-1.5">
               <h6 className="text-base md:text-2xl font-semibold">
@@ -272,14 +253,14 @@ export const Features = () => {
             </div>
             <div>
               <div className="flex justify-end flex-col gap-6 xl:flex-row">
-                <div className="max-w-105">
+                <div className="max-w-105 overflow-hidden">
                   <Image
                     src={Feature5.src}
                     width={Feature5.width}
                     height={Feature5.height}
                     blurDataURL={Feature5.blurDataURL}
                     alt="Create & Manage Contracts"
-                    className="w-fit h-auto"
+                    className="w-fit h-auto group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -288,11 +269,8 @@ export const Features = () => {
 
           {/* Card 6: Stay Compliant Without the Stress */}
           <motion.div
-            className="bg-[#FCF9FF] min-h-70 pt-6 px-6 lg:pl-7 lg:pr-15 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-6 lg:grid-cols-1 content-between lg:pt-7"
+            className="bg-[#FCF9FF] min-h-70 pt-6 px-6 lg:pl-7 lg:pr-15 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-6 lg:grid-cols-1 content-between lg:pt-7 hover:shadow-lg transition-shadow duration-300 rounded-2xl overflow-hidden group"
             variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
           >
             <div className="space-y-1.5">
               <h6 className="text-base md:text-2xl font-semibold">
@@ -305,20 +283,20 @@ export const Features = () => {
             </div>
             <div>
               <div className="flex justify-end flex-col gap-6 xl:flex-row">
-                <div className="max-w-105">
+                <div className="max-w-105 overflow-hidden">
                   <Image
                     src={Feature5.src}
                     width={Feature5.width}
                     height={Feature5.height}
                     blurDataURL={Feature5.blurDataURL}
                     alt="Stay Compliant Without the Stress"
-                    className="w-fit h-auto"
+                    className="w-fit h-auto group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

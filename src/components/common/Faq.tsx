@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./button";
-import { ChevronDown } from "lucide-react";
 
 interface FaqItem {
   question: string;
@@ -120,21 +119,6 @@ function Faq({ items = defaultFaqItems }: FaqProps) {
           />
         ))}
       </div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8, x: 20 }}
-        whileInView={{ opacity: 1, scale: 1, x: 0 }}
-        transition={{ ease: "easeInOut", duration: 0.3, delay: 0.6 }}
-        viewport={{ once: true, amount: 0.4 }}
-        className="flex justify-end w-full mt-4"
-      >
-        <Button
-          variant="primary"
-          className="bg-[#5E2A8C] text-white px-4! text-sm! rounded-xl h-10!  py-3! flex gap-2 items-center  cursor-pointer focus:bg-[#5e2a8cd5] transition-colors ease-in-out duration-300 hover:bg-[#8b3dd0cf] "
-        >
-          Load More
-          <ChevronDown size={16} />
-        </Button>
-      </motion.div>
     </div>
   );
 }
