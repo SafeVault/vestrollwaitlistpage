@@ -48,13 +48,13 @@ export const HowItWorks = () => {
   };
 
   const stepVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut",
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
       },
     },
   };
@@ -124,7 +124,7 @@ export const HowItWorks = () => {
                 {/* Number Circle with dotted line */}
                 <div className=" flex w-fit md:w-full items-center ">
                   {/* Circular Badge */}
-                  <div className="w-8 h-8 rounded-full bg-white border-2 border-[#F3E6FF] flex items-center justify-center shrink-0 group-hover:bg-[#5E2A8C] group-hover:text-white transition-colors duration-300">
+                  <div className="w-10 h-10 rounded-full bg-white border-2 border-[#F3E6FF] flex items-center justify-center shrink-0 group-hover:bg-[#5E2A8C] group-hover:text-white transition-all duration-300 group-hover:scale-110 shadow-sm group-hover:shadow-purple-200">
                     <span className="text-sm font-bold text-purple-600 group-hover:text-white">
                       {step.number}
                     </span>

@@ -110,9 +110,9 @@ export const Footer = () => {
               />
             </div>
             <p className="text-sm md:text-base text-gray-400 leading-[140%] tracking-[0%]">
-              VestRoll is a modern payroll platform that lets you pay teams in
-              crypto or fiat, track time, manage contracts, and automate payroll
-              all in one secure, cross-platform system.
+              The intelligent platform for global teams. Automate your payroll,
+              simplify complex contracts, and scale your operations with
+              efficiency and precision.
             </p>
           </div>
 

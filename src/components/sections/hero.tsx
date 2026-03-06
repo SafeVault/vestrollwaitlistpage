@@ -1,13 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ArrowRight from "../../assets/arrow-right.png";
 import Image from "next/image";
 import dash from "../../assets/dash.svg";
 import HeroImage2 from "../../assets/wallet.png";
 import HeroImage3 from "../../assets/employee.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Hero = () => {
+  const [index, setIndex] = useState(0);
+  const words = ["pay", "manage", "scale", "onboard"];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="pt-32 pb-0 md:pt-48 px-4 bg-linear-to-b from-purple-50/30 to-purple-200/80 rounded-b-[3rem] overflow-hidden">
       <div className="container mx-auto text-left md:text-center max-w-6xl">
@@ -17,7 +27,24 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl md:text-6xl font-regular tracking-tight mb-6 text-black/90"
         >
-          Pay & Managed Your Team Seamlessly In Crypto or Fiat
+          <div className="flex flex-wrap md:justify-center gap-x-2 md:gap-x-1.5 items-center">
+            <span>Simplify how you</span>
+            <span className="relative inline-flex items-center h-[1.2em]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={words[index]}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="text-[#5E2A8C] italic font-serif"
+                >
+                  {words[index]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+          </div>
+          <span className="block md:mt-2">your global team</span>
         </motion.h1>
         <motion.p
           initial={{ y: 30, opacity: 0 }}
@@ -25,17 +52,20 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg md:text-md text-muted-foreground mb-10 md:max-w-5xl md:mx-auto text-black/70 font-medium"
         >
-          A modern payroll platform that lets you pay teams in fiat, track time,
-          manage contracts, and automate payroll all in one secure,
-          cross-platform system.
+          The intelligent platform for global teams. Automate your payroll,
+          simplify complex contracts, and scale your operations with efficiency
+          and precision.
         </motion.p>
         <motion.button
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: "0 10px 25px -5px rgba(94, 42, 140, 0.4)",
+          }}
           whileTap={{ scale: 0.95 }}
-          className="bg-[#5E2A8C] text-white px-4 py-2 rounded-xl w-fit md:mx-auto flex items-center gap-2 shadow-lg hover:shadow-purple-200 hover:bg-[#4a2170] transition-all duration-300"
+          className="bg-[#5E2A8C] text-white px-4 py-2 rounded-xl w-fit md:mx-auto flex items-center gap-2 shadow-lg transition-all duration-300"
         >
           <p> Get started</p>
           <Image src={ArrowRight} alt="Arrow Right" width={20} height={20} />
@@ -61,8 +91,23 @@ export const Hero = () => {
           {/* Bottom-left image - overlapping main image */}
           <motion.div
             initial={{ x: -100, opacity: 0, rotate: -15 }}
-            animate={{ x: 0, opacity: 1, rotate: 0 }}
-            transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              rotate: 0,
+              y: [0, -10, 0],
+            }}
+            transition={{
+              x: { duration: 0.8, delay: 1, ease: "easeOut" },
+              opacity: { duration: 0.8, delay: 1 },
+              rotate: { duration: 0.8, delay: 1 },
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.2,
+              },
+            }}
             className="absolute left-0 md:left-4 lg:left-[-80px] xl:left-[-40px] bottom-0 md:bottom-4 lg:bottom-[-40px] xl:bottom-[50px] z-20 hidden md:block group"
           >
             <Image
@@ -77,8 +122,23 @@ export const Hero = () => {
           {/* Top-right image - overlapping main image */}
           <motion.div
             initial={{ x: 100, opacity: 0, rotate: 15 }}
-            animate={{ x: 0, opacity: 1, rotate: 0 }}
-            transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              rotate: 0,
+              y: [0, 10, 0],
+            }}
+            transition={{
+              x: { duration: 0.8, delay: 1.2, ease: "easeOut" },
+              opacity: { duration: 0.8, delay: 1.2 },
+              rotate: { duration: 0.8, delay: 1.2 },
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.4,
+              },
+            }}
             className="absolute right-0 md:right-4 lg:right-[-80px] xl:right-[-40px] top-0 md:top-4 lg:top-[-40px] xl:top-[150px] z-20 hidden md:block group"
           >
             <Image

@@ -23,16 +23,16 @@ export const Features = () => {
   const cardVariants: Variants = {
     hidden: {
       opacity: 0,
-      y: 50,
-      scale: 0.95,
+      y: 40,
+      scale: 0.98,
     },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut",
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
       },
     },
   };

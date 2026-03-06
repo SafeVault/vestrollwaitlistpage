@@ -5,7 +5,7 @@ import MailIcon from "../../assets/mail.svg";
 import waitlistImage from "../../assets/waitlist.svg";
 import WalletImage from "../../assets/wallet.png";
 import EmployeeImage from "../../assets/employee.png";
-import MacBook from "@/assets/MacBook Pro.png";
+import MacBook from "../../assets/MacBook Pro.png";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -119,8 +119,23 @@ export const Waitlist = () => {
             {/* Floating Wallet Image - Left Bottom */}
             <motion.div
               initial={{ x: -50, opacity: 0, rotate: -10 }}
-              whileInView={{ x: 0, opacity: 1, rotate: 0 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                rotate: 0,
+                y: [0, -8, 0],
+              }}
+              transition={{
+                x: { duration: 0.7, delay: 0.5, ease: "easeOut" },
+                opacity: { duration: 0.7, delay: 0.5 },
+                rotate: { duration: 0.7, delay: 0.5 },
+                y: {
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.7,
+                },
+              }}
               viewport={{ once: true }}
               className="absolute -left-5 md:-left-10 lg:-left-20 bottom-[10%] z-20 w-45 md:w-70 lg:w-62.5 group"
             >
@@ -136,8 +151,23 @@ export const Waitlist = () => {
             {/* Floating Employee Image - Right Middle */}
             <motion.div
               initial={{ x: 50, opacity: 0, rotate: 10 }}
-              whileInView={{ x: 0, opacity: 1, rotate: 0 }}
-              transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                rotate: 0,
+                y: [0, 8, 0],
+              }}
+              transition={{
+                x: { duration: 0.7, delay: 0.7, ease: "easeOut" },
+                opacity: { duration: 0.7, delay: 0.7 },
+                rotate: { duration: 0.7, delay: 0.7 },
+                y: {
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.9,
+                },
+              }}
               viewport={{ once: true }}
               className="absolute -right-5 md:right-[-25%] lg:-right-40 top-[10%] md:top-[15%] z-20 w-50 md:w-75 lg:w-62.5 group"
             >

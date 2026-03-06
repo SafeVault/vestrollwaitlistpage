@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import image from "@/assets/images/guy-sitting.jpg";
+import image from "../../assets/images/guy-sitting.jpg";
 import Faq from "../common/Faq";
 import { Workforce } from "./workforce";
 import { motion } from "framer-motion";
