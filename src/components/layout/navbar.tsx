@@ -25,13 +25,19 @@ export const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 mx-auto">
           <Link
-            href="#features"
+            href="/"
             className="text-base leading-5.5 font-medium text-[#374151] hover:text-[#374151]/90 duration-300 ease-in-out transition-colors"
           >
             Home
           </Link>
           <Link
-            href="#pricing"
+            href="#how-it-works"
+            className="text-base leading-5.5 font-medium text-[#374151] hover:text-[#374151]/90 duration-300 ease-in-out transition-colors"
+          >
+            How it works
+          </Link>
+          <Link
+            href="#faq"
             className="text-base leading-5.5 font-medium text-[#374151] hover:text-[#374151]/90 duration-300 ease-in-out transition-colors"
           >
             FAQs
@@ -82,14 +88,21 @@ export const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-24 left-0 w-full bg-white border-b shadow-xl p-4 flex flex-col gap-4">
           <Link
-            href="#features"
+            href="/"
             className="text-lg font-medium text-gray-800 py-2 border-b border-gray-100"
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </Link>
           <Link
-            href="#pricing"
+            href="#how-it-works"
+            className="text-lg font-medium text-gray-800 py-2 border-b border-gray-100"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            How it works
+          </Link>
+          <Link
+            href="#faq"
             className="text-lg font-medium text-gray-800 py-2 border-b border-gray-100"
             onClick={() => setIsMenuOpen(false)}
           >

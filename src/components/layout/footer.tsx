@@ -110,9 +110,8 @@ export const Footer = () => {
               />
             </div>
             <p className="text-sm md:text-base text-gray-400 leading-[140%] tracking-[0%]">
-              The intelligent platform for global teams. Automate your payroll,
-              simplify complex contracts, and scale your operations with
-              efficiency and precision.
+              Automate your payroll, simplify complex contracts, and scale your
+              operations with efficiency and precision.
             </p>
           </div>
 

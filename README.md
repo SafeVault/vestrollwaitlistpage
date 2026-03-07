@@ -23,15 +23,15 @@ The project follows a modular and scalable architecture to ensure clean code and
 ### Who is this for?
 
 - **Global Enterprises**: Companies with distributed teams needing seamless cross-border payroll.
-- **DAO & Web3 Organizations**: Native crypto organizations requiring fiat and stablecoin payroll solutions.
-- **Freelancers & Contractors**: Individuals seeking transparent, instant, and low-fee payments.
+- **DAO & Organizations**: Organizations requiring efficient fiat and cross-border payroll solutions.
+- **Freelancers & Contractors**: Individuals seeking transparent, instant, and low-fee fiat payments.
 
-### Contribution to the Stellar Ecosystem
+### Global Financial Impact
 
-VestRoll plays a pivotal role in the **Stellar ecosystem** by:
+VestRoll plays a pivotal role in the modern financial ecosystem by:
 
-1.  **Driving Real-World Utility**: Moving beyond speculation to practical, high-volume stablecoin use cases (Payroll).
-2.  **Highlighting Efficiency**: Showcasing Stellar's speed and low fees for frequent, small-to-large value transactions.
+1.  **Driving Real-World Utility**: Providing practical, high-volume fiat use cases (Payroll).
+2.  **Highlighting Efficiency**: Showcasing speed and low fees for frequent, small-to-large value transactions.
 
 ## Getting Started
 

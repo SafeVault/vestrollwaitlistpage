@@ -56,10 +56,10 @@ export const Workforce = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-gray-900 leading-tight">
                 Built for Every Modern Workforce
               </h2>
-              <p className="text-base md:text-lg text-gray-500 max-w-lg">
-                Whether you&apos;re an employer, freelancer, remote team, or
-                Web3 startup, our platform makes managing payments, contracts,
-                and timesheets simple and seamless.
+              <p className="text-base md:text-lg text-gray-500 max-w-xl leading-relaxed">
+                Whether you&apos;re scaling a modern startup or managing a
+                distributed global team, our platform makes handling payments,
+                contracts, and timesheets simple, secure, and entirely seamless.
               </p>
             </div>
           </motion.div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { SmoothScroll } from "@/components/common/SmoothScroll";
 
 const bkFirma = localFont({
   src: [
@@ -20,7 +21,7 @@ const bkFirma = localFont({
 export const metadata: Metadata = {
   title: "Vestroll | Modern Payroll & Workforce Management",
   description:
-    "Secure, seamless crypto and fiat payroll for modern teams. Manage contracts, track time, and automate payments with Vestroll.",
+    "Secure, seamless fiat payroll for modern teams. Manage contracts, track time, and automate payments with Vestroll.",
 };
 
 export default function RootLayout({
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bkFirma.className} font-sans antialiased`}>
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

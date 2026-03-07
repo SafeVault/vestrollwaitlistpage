@@ -13,9 +13,9 @@ export const HowItWorks = () => {
     },
     {
       number: "2",
-      title: "Set up your fiat wallet",
+      title: "Set up your payment account",
       description:
-        "Connect your preferred wallet and enable instant global payments.",
+        "Connect your bank details and enable instant global payments.",
     },
     {
       number: "3",
@@ -60,7 +60,7 @@ export const HowItWorks = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 px-4">
+    <section id="how-it-works" className="py-12 md:py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

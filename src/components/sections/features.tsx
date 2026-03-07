@@ -58,8 +58,9 @@ export const Features = () => {
             viewport={{ once: true }}
             className="text-sm md:text-base leading-[130%] tracking-[0px] text-black"
           >
-            From crypto/fiat payments to timesheets and contracts, every feature
-            is built to simplify how you manage your team.
+            From automated global payouts and timesheets to secure contract
+            management, every feature is built to simplify how you manage your
+            team.
           </motion.p>
         </div>
 

@@ -4,12 +4,13 @@ import image from "../../assets/images/guy-sitting.jpg";
 import Faq from "../common/Faq";
 import { Workforce } from "./workforce";
 import { motion } from "framer-motion";
+
 function FrequentlyAsked() {
   return (
     <section className="mt-10">
       <div className="max-w-310 mx-auto px-5  flex-col-reverse gap-25 flex lg:flex-col">
         <Workforce />
-        <div className="space-y-5.75">
+        <div id="faq" className="space-y-5.75">
           <div className="space-y-4 md:space-y-11">
             <motion.div
               initial={{ scale: 0.8, edgeMode: 0, y: 20, opacity: 0 }}

@@ -16,22 +16,22 @@ const defaultFaqItems: FaqItem[] = [
   {
     question: "What is this platform used for?",
     answer:
-      "It’s a payroll and workforce management system that allows employers to pay employees in fiat, manage timesheets, create contracts, and track all payment history.",
+      "Vestroll is a comprehensive payroll and workforce management system that enables employers to manage global teams, process fiat payments, and track all financial operations in one place.",
   },
   {
     question: "Is this platform for both employers and employees?",
     answer:
-      "Our platform integrates with the Stellar network to enable fast, low-cost stablecoin payments. Employees can receive payments in USDC or other supported cryptocurrencies directly to their wallets.",
+      "Yes! Our platform provides dedicated tools for both. Employers carry out team management and payroll, while employees can track their earnings, submit timesheets, and manage their professional profiles securely.",
   },
   {
     question: "How do payment methods work?",
     answer:
-      "Yes, we implement enterprise-grade security measures including multi-signature wallets, encrypted data storage, and compliance with international financial regulations.",
+      "Payments are processed through secure, integrated bank transfer systems, ensuring that employees receive their salaries directly in their local fiat currency reliably and on time.",
   },
   {
     question: "Can employees submit timesheets?",
     answer:
-      "Absolutely! Our hybrid system supports both traditional fiat payments and cryptocurrency payments, giving you flexibility in how you compensate your team.",
+      "Absolutely! Employees can log their hours directly through the platform, which are automatically synced with payroll for easy review and approval by employers.",
   },
 ];
 

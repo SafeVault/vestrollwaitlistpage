@@ -17,21 +17,21 @@ export const ThreeWays = () => {
     {
       title: "Set Policies That Enforce Themselves.",
       description:
-        "Customize Approval Flows, Pre-Approve Funds, Issue Cards With Built-In Controls And Stop Out-Of-Policy Spending.",
+        "Customize approval flows, pre-approve funds, and issue cards with built-in controls to stop out-of-policy spending before it happens.",
       imagePosition: "right",
       image: policies,
     },
     {
       title: "Triple Checks Are Done For You.",
       description:
-        "Vestroll Keeps An Eye Out 24/7 To Catch Any Out-Of-Policy Transactions, Uncover Errors, And See Where You&apos;re Overspending.",
+        "Vestroll keeps an eye out 24/7 to catch any out-of-policy transactions, uncover errors, and identify where you might be overspending.",
       imagePosition: "left",
       image: tripleCheck,
     },
     {
       title: "Leave The Busywork To Us.",
       description:
-        "Keep Everyone Focused On The Big Picture, And Let Vestroll Automate The Rest—Expenses, Accounting, Compliance, And More.",
+        "Keep everyone focused on the big picture and let Vestroll automate the rest, expenses, accounting, and more.",
       imagePosition: "right",
       image: busywork,
     },
@@ -51,15 +51,6 @@ export const ThreeWays = () => {
           >
             Three ways we save your company both time and money
           </motion.h2>
-          <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto leading-[142%] text-center"
-          >
-            There are many more, but we thought we&apos;d easy you into it
-          </motion.p>
         </div>
 
         {/* Benefits Grid */}

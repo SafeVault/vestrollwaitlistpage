@@ -52,9 +52,8 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg md:text-md text-muted-foreground mb-10 md:max-w-5xl md:mx-auto text-black/70 font-medium"
         >
-          The intelligent platform for global teams. Automate your payroll,
-          simplify complex contracts, and scale your operations with efficiency
-          and precision.
+          Automate your payroll, simplify complex contracts, and scale your
+          operations with efficiency and precision.
         </motion.p>
         <motion.button
           initial={{ y: 30, opacity: 0 }}
